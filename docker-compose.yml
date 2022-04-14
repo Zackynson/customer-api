@@ -3,6 +3,7 @@ version: '3.7'
 services:
   customer-api:
     container_name: customer-api
+    restart: always
     build:
       context: .
       dockerfile: Dockerfile
@@ -11,23 +12,25 @@ services:
       - PORT=4000
       - REDIS_HOST=customer-api-redis
       - REDIS_PORT=6379
-      - REDIS_PASSWORD=eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
+      - REDIS_PASSWORD=senhasupersecreta
     expose:
       - '4000'
     links:
       - customer-api-redis
     ports:
       - '4000:4000'
+    volumes:
+      - ./:/app/
     depends_on:
-      - redis
-    command: npm run start
+      - customer-api-redis
+    command: npm run start:dev
   customer-api-redis:
     container_name: customer-api-redis
     image: redis:6.2-alpine
     restart: always
     ports:
       - '6379:6379'
-    command: redis-server --save 20 1 --loglevel warning --requirepass eYVX7EwVmmxKPCDmwMtyKVge8oLd2t81
+    command: redis-server --save 20 1 --loglevel warning --requirepass senhasupersecreta
     volumes: 
       - cache:/data
 volumes:
