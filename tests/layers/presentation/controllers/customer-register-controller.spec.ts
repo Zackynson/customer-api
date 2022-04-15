@@ -3,9 +3,9 @@ import faker from '@faker-js/faker';
 import { CustomerRegisterController } from '@/presentation/controllers';
 import { badRequest, created } from '@/presentation/helpers';
 
-import { throwError, ValidationSpy } from '@/tests/domain/mocks';
+import { throwError, ValidationSpy } from '@/tests/layers/domain/mocks';
 import { CustomerRegister } from '@/domain/useCases/customers/customer-register';
-import { CustomerRegisterSpy } from '@/tests/data/mocks';
+import { CustomerRegisterSpy } from '@/tests/layers/data/mocks';
 
 const mockRequest = (): CustomerRegisterController.CustomerRegisterParams => ({
   body: {

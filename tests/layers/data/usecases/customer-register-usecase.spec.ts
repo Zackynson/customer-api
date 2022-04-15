@@ -1,10 +1,10 @@
 import faker from '@faker-js/faker';
 
-import { throwError } from '@/tests/domain/mocks';
+import { throwError } from '@/tests/layers/domain/mocks';
 import { CustomerRegister } from '@/domain/useCases/customers/customer-register';
-import { CustomerRegisterRepositorySpy } from '@/tests/infra/mocks/customer-register-repository-spy';
+import { CustomerRegisterRepositorySpy } from '@/tests/layers/infra/mocks/customer-register-repository-spy';
 import { CustomerRegisterUseCase } from '@/data/usecases/customers/customer-register-usecase';
-import { IdGeneratorSpy } from '@/tests/infra/mocks/id-generator';
+import { IdGeneratorSpy } from '@/tests/layers/infra/mocks/id-generator';
 
 const mockData = (): CustomerRegister.Params => ({
   name: `${faker.name.firstName()} ${faker.name.lastName()}`,

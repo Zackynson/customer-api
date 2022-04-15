@@ -1,6 +1,6 @@
 import faker from '@faker-js/faker';
 
-import { CustomerRegisterRepositorySpy } from '@/tests/infra/mocks/customer-register-repository-spy';
+import { CustomerRegisterRepositorySpy } from '@/tests/layers/infra/mocks/customer-register-repository-spy';
 import { CustomerRegisterRespository } from '@/data/protocols/customers';
 
 jest.setTimeout(1000000);

@@ -2,7 +2,7 @@ import Redis from 'ioredis';
 
 import { RedisCustomerRepository } from '@/infra/db/customers/redis-customer-repository';
 import { RedisHelper } from '@/infra/helpers/redis-helper';
-import { RedisTestContainer } from '@/tests/infra/mocks/create-redis-container';
+import { RedisTestContainer } from '@/tests/layers/infra/mocks/create-redis-container';
 import { StartedTestContainer } from 'testcontainers';
 
 jest.setTimeout(100000);

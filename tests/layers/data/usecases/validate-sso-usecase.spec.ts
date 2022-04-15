@@ -1,6 +1,6 @@
 import { ValidateSSOUseCase } from '@/data/usecases/auth/validate-sso-usecase';
 import { SSOUnavailableError, UnauthorizedError } from '@/presentation/errors';
-import { SSOServiceSpy } from '../mocks/sso-validate-spy';
+import { SSOServiceSpy } from '@/tests/layers/data/mocks/sso-validate-spy';
 
 describe('ValidateSSOUseCase', () => {
   let ssoService: SSOServiceSpy;

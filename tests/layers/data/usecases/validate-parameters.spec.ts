@@ -3,8 +3,8 @@ import faker from '@faker-js/faker';
 import { ValidateParameters } from '@/data/helpers';
 import { ObjectValidationError } from '@/presentation/errors';
 
-import { ValidateParametersAdapterSpy } from '@/tests/data/mocks';
-import { throwError } from '@/tests/domain/mocks';
+import { ValidateParametersAdapterSpy } from '@/tests/layers/data/mocks';
+import { throwError } from '@/tests/layers/domain/mocks';
 
 const mockRequest = (): any => ({
   name: faker.name.firstName(),

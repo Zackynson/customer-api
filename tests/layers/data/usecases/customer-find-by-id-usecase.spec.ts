@@ -1,6 +1,6 @@
-import { throwError } from '@/tests/domain/mocks';
+import { throwError } from '@/tests/layers/domain/mocks';
 import { CustomerFindById } from '@/domain/useCases/customers';
-import { CustomerFindByIdRepositorySpy } from '@/tests/infra/mocks/customer-find-by-id-repository-spy';
+import { CustomerFindByIdRepositorySpy } from '@/tests/layers/infra/mocks/customer-find-by-id-repository-spy';
 import { CustomerFindByIdUseCase } from '@/data/usecases/customers/customer-find-by-id-usecase';
 
 const mockData = (): CustomerFindById.Params => ({

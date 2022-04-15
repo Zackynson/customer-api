@@ -1,12 +1,14 @@
-import { RedisTestContainer } from '@/tests/infra/mocks/create-redis-container';
+import { RedisTestContainer } from '@/tests/layers/infra/mocks/create-redis-container';
 import { Test, TestingModule } from '@nestjs/testing';
 import { StartedTestContainer } from 'testcontainers';
-import { AppController } from './app.controller';
+import * as httpMocks from 'node-mocks-http';
+
+import { AuthMiddleware } from '@/src/common/middlewares/auth.middleware';
 
 jest.setTimeout(100000);
 
 describe('AppController', () => {
-  let appController: AppController;
+  let authMiddleware: AuthMiddleware;
   let container: StartedTestContainer;
 
   beforeAll(async () => {
@@ -22,25 +24,22 @@ describe('AppController', () => {
 
   beforeEach(async () => {
     const app: TestingModule = await Test.createTestingModule({
-      controllers: [AppController],
+      controllers: [AuthMiddleware],
       providers: [],
     }).compile();
 
-    appController = app.get<AppController>(AppController);
+    authMiddleware = app.get<AuthMiddleware>(AuthMiddleware);
   });
 
   describe('[POST] /customers', () => {
-    it('should create and return a new Customer', async () => {
-      const response = await appController.create({
-        name: 'any_name',
-        document: 123456789,
-      });
+    const req = httpMocks.createRequest();
+    const res = httpMocks.createResponse();
+    const next = jest.fn();
 
-      expect(response.statusCode).toBe(201);
+    it('should return 401', async () => {
+      const response: any = await authMiddleware.use(req, res, next);
 
-      expect(response.body.document).toEqual(123456789);
-      expect(response.body.id).toBeTruthy();
-      expect(response.body.name).toEqual('any_name');
+      expect(response.statusCode).toEqual(401);
     });
   });
 });

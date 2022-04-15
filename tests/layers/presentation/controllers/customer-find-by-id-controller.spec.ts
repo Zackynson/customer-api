@@ -3,8 +3,8 @@ import faker from '@faker-js/faker';
 import { CustomerFindByIdController } from '@/presentation/controllers';
 import { badRequest, notFound, ok } from '@/presentation/helpers';
 
-import { throwError, ValidationSpy } from '@/tests/domain/mocks';
-import { CustomerFindByIdSpy } from '@/tests/data/mocks';
+import { throwError, ValidationSpy } from '@/tests/layers/domain/mocks';
+import { CustomerFindByIdSpy } from '@/tests/layers/data/mocks';
 import { CustomerNotFoundError } from '@/presentation/errors';
 
 const mockRequest = (): CustomerFindByIdController.CustomerFindByIdParams => ({

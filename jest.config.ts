@@ -24,6 +24,7 @@ const config: Config.InitialOptions = {
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
   moduleNameMapper: {
     '@/tests/(.*)': '<rootDir>/tests/$1',
+    '@/src/(.*)': '<rootDir>/src/$1',
     '@/(.*)': '<rootDir>/src/layers/$1',
   },
 
