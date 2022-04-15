@@ -19,7 +19,7 @@
     "noFallthroughCasesInSwitch": false,
     "paths": {
       "@/*": ["src/layers/*"],
-      "@/app": ["src/*"],
+      "@/src/*": ["src/*"],
       "@/tests/*": ["tests/*"],
       "@types/trust-monitor": ["libs/@types/trust-monitor/src"]
     },
