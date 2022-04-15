@@ -17,7 +17,9 @@ describe('ValidateParameters usecase', () => {
 
   beforeEach(() => {
     validateParametersAdapterSpy = new ValidateParametersAdapterSpy();
-    sut = new ValidateParameters({ validateParametersAdapter: validateParametersAdapterSpy });
+    sut = new ValidateParameters({
+      validateParametersAdapter: validateParametersAdapterSpy,
+    });
     request = mockRequest();
   });
 
@@ -27,7 +29,9 @@ describe('ValidateParameters usecase', () => {
   });
 
   it('should return an ObjectValidationError if ValidationParametersAdapter throws', async () => {
-    jest.spyOn(validateParametersAdapterSpy, 'validate').mockImplementationOnce(throwError);
+    jest
+      .spyOn(validateParametersAdapterSpy, 'validate')
+      .mockImplementationOnce(throwError);
     const response = await sut.validate(request);
     expect(response).toEqual(new ObjectValidationError());
   });

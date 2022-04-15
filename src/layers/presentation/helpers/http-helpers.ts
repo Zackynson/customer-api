@@ -38,6 +38,11 @@ export const notFound = (error?: Error): HttpResponse => ({
 });
 
 export const serverError = (error?: Error): HttpResponse => ({
-  statusCode: 502,
+  statusCode: 500,
   body: error?.message || 'Internal server error.',
+});
+
+export const notAvailable = (error?: Error): HttpResponse => ({
+  statusCode: 502,
+  body: error?.message || 'Service not available.',
 });
