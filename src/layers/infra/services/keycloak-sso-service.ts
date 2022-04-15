@@ -1,5 +1,5 @@
 import { SSOService } from '@/data/protocols/sso-service';
-import url from 'url';
+import * as url from 'url';
 import axios from 'axios';
 
 export class KeycloakSSOService implements SSOService {
