@@ -1,7 +1,7 @@
 import Redis from 'ioredis';
-import { GenericContainer } from 'testcontainers';
 
 import { RedisHelper } from '@/infra/helpers/redis-helper';
+import { RedisTestContainer } from '../mocks/create-redis-container';
 
 jest.setTimeout(1000000);
 
@@ -14,11 +14,7 @@ describe('RedisCustomerRepository', () => {
   });
 
   beforeAll(async () => {
-    // "redis" is the name of the Docker image to download and run
-    container = await new GenericContainer('redis')
-      // exposes the internal Docker port to the host machine
-      .withExposedPorts(6379)
-      .start();
+    const container = await RedisTestContainer.getContainer();
 
     process.env.REDIS_HOST = container.getHost();
     process.env.REDIS_PORT = container.getMappedPort(6379).toString();
