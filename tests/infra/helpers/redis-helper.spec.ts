@@ -2,19 +2,20 @@ import Redis from 'ioredis';
 
 import { RedisHelper } from '@/infra/helpers/redis-helper';
 import { RedisTestContainer } from '../mocks/create-redis-container';
+import { StartedTestContainer } from 'testcontainers';
 
 jest.setTimeout(1000000);
 
 describe('RedisCustomerRepository', () => {
   let redisClient: Redis;
-  let container: any;
+  let container: StartedTestContainer;
 
   beforeEach(async () => {
     redisClient = await RedisHelper.getClient();
   });
 
   beforeAll(async () => {
-    const container = await RedisTestContainer.getContainer();
+    container = await RedisTestContainer.getContainer();
 
     process.env.REDIS_HOST = container.getHost();
     process.env.REDIS_PORT = container.getMappedPort(6379).toString();

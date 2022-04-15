@@ -1,17 +1,23 @@
 import { RedisTestContainer } from '@/tests/infra/mocks/create-redis-container';
 import { Test, TestingModule } from '@nestjs/testing';
+import { StartedTestContainer } from 'testcontainers';
 import { AppController } from './app.controller';
 
 jest.setTimeout(100000);
 
 describe('AppController', () => {
   let appController: AppController;
+  let container: StartedTestContainer;
 
   beforeAll(async () => {
-    const container = await RedisTestContainer.getContainer();
+    container = await RedisTestContainer.getContainer();
 
     process.env.REDIS_HOST = container.getHost();
     process.env.REDIS_PORT = container.getMappedPort(6379).toString();
+  });
+
+  afterAll(async () => {
+    container && (await container.stop());
   });
 
   beforeEach(async () => {
