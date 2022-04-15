@@ -19,7 +19,7 @@ export class KeycloakSSOService implements SSOService {
       },
     });
 
-    return res.data;
+    return res?.data;
   }
 }
 

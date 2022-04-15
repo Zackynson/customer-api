@@ -9,16 +9,23 @@ import { SSOUnavailableError } from '@/presentation/errors';
 export class AuthMiddleware implements NestMiddleware {
   async use(req: Request, res: Response, next: NextFunction) {
     try {
-      const invalidAuth = await makeSSOValidation().validate(
+      const validationError = await makeSSOValidation().validate(
         req?.headers?.authorization,
       );
 
-      if (invalidAuth) {
-        return res.send(unauthorized());
+      if (validationError) {
+        if (validationError instanceof SSOUnavailableError) {
+          const response = notAvailable(new SSOUnavailableError());
+          return res.status(response.statusCode).json(response);
+        }
+
+        return res.status(unauthorized().statusCode).json(unauthorized());
       }
     } catch (error) {
-      console.log(error);
-      return res.send(notAvailable(new SSOUnavailableError()));
+      console.error(error);
+
+      const response = notAvailable(new SSOUnavailableError());
+      return res.status(response.statusCode).json(response);
     }
 
     return next();
