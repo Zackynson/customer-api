@@ -1,12 +1,12 @@
 FROM node:16-alpine as customer-api
 
-WORKDIR /app
+WORKDIR /usr/src/app
 
 # Copia os arquivos do npm
 COPY package*.json ./
 
 # Instala as dependencias
-RUN npm i
+RUN npm install
 
 # Copia os arquivos do codigo para a imagem
 COPY . .
@@ -14,3 +14,4 @@ COPY . .
 # Instala as dependencias
 RUN npm run build
 
+CMD [ "npm", "run", "start:prod" ]
