@@ -4,7 +4,7 @@ import { Response } from 'express';
 
 import { RedisTestContainer } from '@/tests/layers/infra/mocks/create-redis-container';
 import { Test, TestingModule } from '@nestjs/testing';
-import { AppController } from '@/src/app.controller';
+import { AppController } from '@/src/app/app.controller';
 
 jest.setTimeout(100000);
 

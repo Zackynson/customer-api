@@ -9,7 +9,7 @@ import { Response } from 'express';
 import {
   CustomerRegisterController,
   CustomerUpdateController,
-} from './layers/presentation/controllers';
+} from '@/presentation/controllers';
 
 @Controller('customers')
 export class AppController {
