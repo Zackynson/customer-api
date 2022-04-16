@@ -8,6 +8,8 @@ COPY package*.json ./
 # Instala as dependencias
 RUN npm install
 
+RUN npm i -g @nestjs/cli
+
 # Copia os arquivos do codigo para a imagem
 COPY . .
 
