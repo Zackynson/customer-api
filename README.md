@@ -63,8 +63,9 @@ $ cd customer-api
 
 ```bash
 
-$ npm install 
 $ npm i -g @nestjs/cli
+
+$ npm install 
 
 
 ```
@@ -95,7 +96,7 @@ A aplicação será iniciada e rodará no endereço [http://localhost:4000](http
  
 ```bash
 
-docker build -t <nome_para_imagem> . 
+$ docker build -t <nome_para_imagem> . 
 
 ```
 
