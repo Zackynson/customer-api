@@ -92,32 +92,43 @@ A aplicação será iniciada e rodará no endereço [http://localhost:4000](http
 #### Gerando a imagem
  
 ```bash
+
 docker build -t <nome_para_imagem> . 
+
 ```
 
 #### Rodando container com base na nova imagem
  
 ```bash
+
 docker run -p <porta_localhost>:4000 <nome_da_imagem_gerada> -e <variaveis_ambiente>
+
 ```
 
 ## Testando a aplicação
 
-```bash
+#### Testes unitários
 
-# unit tests
+```bash
 
 $ npm run test:unit
 
+```
   
 
-# e2e tests
+##### Testes de integração
 
-$ npm run test:e2e
+```bash
+
+$ npm run test:integration
+
+```
+
 
   
+#### Gerar relatório da cobertura de testes
 
-# test coverage
+```bash
 
 $ npm run test:cov
 
