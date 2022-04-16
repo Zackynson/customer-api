@@ -1,4 +1,4 @@
-<p  align="center">
+﻿<p  align="center">
 	<a  href="http://nestjs.com/"  target="blank">
 		<img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Stone_pagamentos.png"  width="250"  alt="Logo da Stone" />
 	</a></p>
@@ -15,7 +15,7 @@ Uma uma RESTful API que suporta as seguintes operações:
 - Salvar um cliente novo
 - Atualizar um cliente existente
 - Buscar um cliente por ID
-  
+
 Utilizando:
 - [Nest](https://github.com/nestjs/nest) framework.
 - [Axios](https://axios-http.com/) Promise based HTTP client
@@ -33,8 +33,8 @@ Utilizando:
 #### Clonar o repositório e acessar a pasta
 
 ```bash
-git clone https://github.com/Zackynson/customer-api.git
-cd customer-api
+$ git clone https://github.com/Zackynson/customer-api.git
+$ cd customer-api
 ```
 
 #### Inicializar o projeto em modo de desenvolvimento
@@ -54,16 +54,16 @@ docker compose up
 
 ```bash
 
-git clone https://github.com/Zackynson/customer-api.git
-cd customer-api
+$ git clone https://github.com/Zackynson/customer-api.git
+$ cd customer-api
 
 ```
-
+  
 #### Instalar as dependências
 
 ```bash
 
-npm install 
+$ npm install 
 
 ```
 
@@ -79,31 +79,26 @@ npm install
 
 ```bash
 
-npm run start:dev
+$ npm run start:dev
 
 ```
 
 A aplicação será iniciada e rodará no endereço [http://localhost:4000](http://localhost:4000)
 
-**Importante**: É necessário ter um servidor Redis rodando local ou remotamente nesse caso e configurar as variáveis de ambiente caso nao estejam no endereço padrão de localhost.
+**Importante**: é necessário ter um servidor Redis rodando local ou remotamente nesse caso e configurar as variáveis de ambiente caso nao estejam no endereço padrão de localhost.
 
-## Produção
+## Construindo para produção com docker
 
+#### Gerando a imagem
+ 
 ```bash
+docker build -t <nome_para_imagem> . 
+```
 
-# development
-
-npm run start
-
-
-# watch mode
-
-npm run start:dev
-
-# production mode
-
-npm run start:prod
-
+#### Rodando container com base na nova imagem
+ 
+```bash
+docker run -p <porta_localhost>:4000 <nome_da_imagem_gerada> -e <variaveis_ambiente>
 ```
 
 ## Testando a aplicação
@@ -112,15 +107,19 @@ npm run start:prod
 
 # unit tests
 
-npm run test:unit
+$ npm run test:unit
+
+  
 
 # e2e tests
 
-npm run test:e2e
+$ npm run test:e2e
+
+  
 
 # test coverage
 
-npm run test:cov
+$ npm run test:cov
 
 ```
 
@@ -129,5 +128,5 @@ npm run test:cov
 - Author - [Crystopher Carvalho](https://github.com/Zackynson)
 
 ## Licença
-  
+ 
 Esse projeto não é licenciado
