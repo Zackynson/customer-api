@@ -39,7 +39,7 @@ $ cd customer-api
 
 #### Inicializar o projeto em modo de desenvolvimento
 ```bash
-docker compose up
+$ docker compose up
 ```
 
 #### Serão iniciados dois containers:
@@ -64,6 +64,8 @@ $ cd customer-api
 ```bash
 
 $ npm install 
+$ npm i -g @nestjs/cli
+
 
 ```
 
@@ -101,7 +103,7 @@ docker build -t <nome_para_imagem> .
  
 ```bash
 
-docker run -p <porta_localhost>:4000 <nome_da_imagem_gerada> -e <variaveis_ambiente>
+$ docker run -p <porta_localhost>:4000 <nome_da_imagem_gerada> -e <variaveis_ambiente>
 
 ```
 
