@@ -33,8 +33,8 @@ Utilizando:
 #### Clonar o repositório e acessar a pasta
 
 ```bash
-$ git clone https://github.com/Zackynson/customer-api.git
-$ cd customer-api
+git clone https://github.com/Zackynson/customer-api.git
+cd customer-api
 ```
 
 #### Inicializar o projeto em modo de desenvolvimento
@@ -54,8 +54,8 @@ docker compose up
 
 ```bash
 
-$ git clone https://github.com/Zackynson/customer-api.git
-$ cd customer-api
+git clone https://github.com/Zackynson/customer-api.git
+cd customer-api
 
 ```
 
@@ -63,7 +63,7 @@ $ cd customer-api
 
 ```bash
 
-$ npm install 
+npm install 
 
 ```
 
@@ -79,7 +79,7 @@ $ npm install
 
 ```bash
 
-$ npm run start:dev
+npm run start:dev
 
 ```
 
@@ -93,16 +93,16 @@ A aplicação será iniciada e rodará no endereço [http://localhost:4000](http
 
 # development
 
-$ npm run start
+npm run start
 
 
 # watch mode
 
-$ npm run start:dev
+npm run start:dev
 
 # production mode
 
-$ npm run start:prod
+npm run start:prod
 
 ```
 
@@ -112,15 +112,15 @@ $ npm run start:prod
 
 # unit tests
 
-$ npm run test:unit
+npm run test:unit
 
 # e2e tests
 
-$ npm run test:e2e
+npm run test:e2e
 
 # test coverage
 
-$ npm run test:cov
+npm run test:cov
 
 ```
 
