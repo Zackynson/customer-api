@@ -1,10 +1,10 @@
+import { StartedTestContainer } from 'testcontainers';
+import * as httpMocks from 'node-mocks-http';
+import { Response } from 'express';
+
 import { RedisTestContainer } from '@/tests/layers/infra/mocks/create-redis-container';
 import { Test, TestingModule } from '@nestjs/testing';
-import { StartedTestContainer } from 'testcontainers';
 import { AppController } from '@/src/app.controller';
-import * as httpMocks from 'node-mocks-http';
-
-import { Response } from 'express';
 
 jest.setTimeout(100000);
 
