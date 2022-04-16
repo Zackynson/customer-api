@@ -1,13 +1,12 @@
 import { CustomerFindById } from '@/domain/useCases/customers';
-import { CustomerRegister } from '@/domain/useCases/customers/customer-register';
 
-export class CustomerFindByIdSpy implements CustomerFindByIdSpy {
+export class CustomerFindByIdSpy implements CustomerFindById {
   result: CustomerFindById.Result;
   params: any;
 
   async find(
     params: CustomerFindById.Params,
-  ): Promise<CustomerRegister.Result> {
+  ): Promise<CustomerFindById.Result> {
     this.params = params;
 
     return {

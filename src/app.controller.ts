@@ -1,15 +1,25 @@
-import { Body, Controller, Get, Param, Post, Res } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Put, Res } from '@nestjs/common';
 
-import { makeCustomerRegisterController } from '@/main/factories';
-import { makeCustomerFindByIdController } from '@/main/factories/customers/controllers/customer-find-by-id-controller-factory';
+import {
+  makeCustomerRegisterController,
+  makeCustomerUpdateController,
+  makeCustomerFindByIdController,
+} from '@/main/factories';
 import { Response } from 'express';
+import {
+  CustomerRegisterController,
+  CustomerUpdateController,
+} from './layers/presentation/controllers';
 
 @Controller('customers')
 export class AppController {
   @Post()
-  async create(@Body() body: any, @Res() res: Response) {
+  async create(
+    @Body() body: CustomerRegisterController.CustomerRegisterDTO,
+    @Res() res: Response,
+  ) {
     const response = await makeCustomerRegisterController().handle({
-      body,
+      params: body,
     });
 
     return res.status(response.statusCode).json(response);
@@ -20,6 +30,22 @@ export class AppController {
     const response = await makeCustomerFindByIdController().handle({
       params: {
         id,
+      },
+    });
+
+    return res.status(response.statusCode).json(response);
+  }
+
+  @Put(':id')
+  async updateOne(
+    @Param('id') id: string,
+    @Body() body: CustomerUpdateController.CustomerUpdateDTO,
+    @Res() res: Response,
+  ) {
+    const response = await makeCustomerUpdateController().handle({
+      params: {
+        id,
+        data: body,
       },
     });
 

@@ -11,7 +11,7 @@ export class CustomerRegisterUseCase implements CustomerRegister {
   }
 
   async register(
-    params: CustomerRegisterUseCase.Params,
+    params: CustomerRegister.Params,
   ): Promise<CustomerRegister.Result> {
     const uuid = await this.idGenerator.generate();
 
@@ -28,9 +28,5 @@ export namespace CustomerRegisterUseCase {
   export type ConstructorParams = {
     idGenerator: IdGenerator;
     customerRegisterRepository: CustomerRegisterRespository;
-  };
-  export type Params = {
-    name: string;
-    document: number;
   };
 }

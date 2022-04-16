@@ -1,31 +1,41 @@
 import faker from '@faker-js/faker';
 
-import { CustomerFindByIdController } from '@/presentation/controllers';
+import { CustomerUpdateController } from '@/presentation/controllers';
 import { badRequest, notFound, ok } from '@/presentation/helpers';
 
 import { throwError, ValidationSpy } from '@/tests/layers/domain/mocks';
-import { CustomerFindByIdSpy } from '@/tests/layers/data/mocks';
+import {
+  CustomerFindByIdSpy,
+  CustomerUpdateSpy,
+} from '@/tests/layers/data/mocks';
 import { CustomerNotFoundError } from '@/presentation/errors';
 
-const mockRequest = (): CustomerFindByIdController.CustomerFindByIdParams => ({
+const mockRequest = (): CustomerUpdateController.CustomerUpdateParams => ({
   params: {
     id: faker.datatype.uuid(),
+    data: {
+      document: 1234567890,
+      name: 'new_name',
+    },
   },
 });
 
-describe('CustomerRegisterController', () => {
+describe('CustomerUpdateController', () => {
   let validationSpy: ValidationSpy;
   let customerFindByIdSpy: CustomerFindByIdSpy;
-  let sut: CustomerFindByIdController;
-  let request: CustomerFindByIdController.CustomerFindByIdParams;
+  let customerUpdateSpy: CustomerUpdateSpy;
+  let sut: CustomerUpdateController;
+  let request: CustomerUpdateController.CustomerUpdateParams;
 
   beforeEach(() => {
     validationSpy = new ValidationSpy();
     customerFindByIdSpy = new CustomerFindByIdSpy();
+    customerUpdateSpy = new CustomerUpdateSpy();
 
-    sut = new CustomerFindByIdController({
+    sut = new CustomerUpdateController({
       validation: validationSpy,
       customerFindByIdUseCase: customerFindByIdSpy,
+      customerUpdateUseCase: customerUpdateSpy,
     });
 
     request = mockRequest();
@@ -64,10 +74,15 @@ describe('CustomerRegisterController', () => {
     expect(response).toEqual(notFound(new CustomerNotFoundError()));
   });
 
-  it('should return 200 with correct body on success', async () => {
+  it('should return 200 with updated customer on success', async () => {
     const response = await sut.handle(request);
+
     expect(response).toEqual(
-      ok({ id: request.params.id, document: 1234567890, name: 'any_name' }),
+      ok({
+        id: request.params.id,
+        document: request.params.data.document,
+        name: request.params.data.name,
+      }),
     );
   });
 });

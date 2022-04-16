@@ -61,12 +61,28 @@ describe('RedisCustomerRepository', () => {
 
   it('should return a customer', async () => {
     const sut = new RedisCustomerRepository();
-
     const data = makeFakeCustomer();
-
     redisClient.set('customer:' + data.id, JSON.stringify(data));
 
     const customer = await sut.find({ id: 'any_id' });
     expect(customer).toEqual(data);
+  });
+
+  it('should update a customer', async () => {
+    const sut = new RedisCustomerRepository();
+    const data = makeFakeCustomer();
+    redisClient.set('customer:' + data.id, JSON.stringify(data));
+
+    const customer = await redisClient.get('customer:' + data.id);
+    const parsedCustomer = JSON.parse(customer);
+    expect(parsedCustomer).toEqual(data);
+
+    const updatedCustomer = await sut.updateOne({
+      id: data.id,
+      data: { ...data, name: 'new_name' },
+    });
+
+    expect(updatedCustomer).not.toEqual(parsedCustomer);
+    expect(updatedCustomer).toEqual({ ...data, name: 'new_name' });
   });
 });

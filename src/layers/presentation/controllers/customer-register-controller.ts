@@ -12,27 +12,28 @@ export class CustomerRegisterController implements Controller {
   }
 
   async handle({
-    body,
+    params,
   }: CustomerRegisterController.CustomerRegisterParams): Promise<HttpResponse> {
-    const error = await this.validation.validate(body);
+    const error = await this.validation.validate(params);
     if (error) return badRequest(error);
 
-    const customer = await this.customerRegisterUseCase.register(body);
+    const customer = await this.customerRegisterUseCase.register(params);
 
     return created(customer);
   }
 }
 
 export namespace CustomerRegisterController {
+  export type CustomerRegisterDTO = {
+    document: number;
+    name: string;
+  };
   export type ConstructorParams = {
     validation: Validation;
     customerRegisterUseCase: CustomerRegister;
   };
 
   export type CustomerRegisterParams = {
-    body: {
-      document: number;
-      name: string;
-    };
+    params: CustomerRegisterDTO;
   };
 }
