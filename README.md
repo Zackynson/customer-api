@@ -1,73 +1,133 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+<p  align="center">
+	<a  href="http://nestjs.com/"  target="blank">
+		<img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Stone_pagamentos.png"  width="250"  alt="Logo da Stone" />
+	</a></p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+<p  align="center">Desafio técnico para vaga de Backend Developer NodeJS na Stone</p>
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+## Descrição
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+#### Customer API v.1.0.0
 
-## Installation
+Uma uma RESTful API que suporta as seguintes operações:
+
+- Salvar um cliente novo
+- Atualizar um cliente existente
+- Buscar um cliente por ID
+  
+Utilizando:
+- [Nest](https://github.com/nestjs/nest) framework.
+- [Axios](https://axios-http.com/) Promise based HTTP client
+- [Jest](https://jestjs.io/) JavaScript Testing Framework
+- [Typescript](https://www.typescriptlang.org/) JavaScript Superset
+- [Docker](https://www.docker.com/) images
+- [Redis](https://redis.io/) in-memory data store
+
+## Requisitos
+
+- Docker
+- NodeJs v14+ (Desenvolvimento local sem Docker)
+  
+## Desenvolvendo o projeto com Docker
+#### Clonar o repositório e acessar a pasta
 
 ```bash
-$ npm install
+$ git clone https://github.com/Zackynson/customer-api.git
+$ cd customer-api
 ```
 
-## Running the app
+#### Inicializar o projeto em modo de desenvolvimento
+```bash
+docker compose up
+```
+
+#### Serão iniciados dois containers:
+
+- A aplicação em si, baseada no arquivo `Dockerfile` na raiz do projeto rodando no endereço [http://localhost:4000](http://localhost:4000)
+
+- Banco de dados Redis um container baseado na [Imagem oficial do Redis](https://hub.docker.com/_/redis) rodando na porta 6379
+
+## Desenvolvendo sem Docker
+
+#### Clonar o repositório e acessar a pasta
 
 ```bash
+
+$ git clone https://github.com/Zackynson/customer-api.git
+$ cd customer-api
+
+```
+
+#### Instalar as dependências
+
+```bash
+
+$ npm install 
+
+```
+
+#### Configurar variáveis de ambiente (Opcional)
+
+- **REDIS_HOST**: Endereço do redis (default: localhost)
+
+- **REDIS_PORT**: Porta do redis (default: 6379)
+
+- **REDIS_PASSWORD**: Senha do redis (Opcional)
+
+#### Rodar a aplicação em modo de desenvolvimento
+
+```bash
+
+$ npm run start:dev
+
+```
+
+A aplicação será iniciada e rodará no endereço [http://localhost:4000](http://localhost:4000)
+
+**Importante**: É necessário ter um servidor Redis rodando local ou remotamente nesse caso e configurar as variáveis de ambiente caso nao estejam no endereço padrão de localhost.
+
+## Produção
+
+```bash
+
 # development
+
 $ npm run start
 
+
 # watch mode
+
 $ npm run start:dev
 
 # production mode
+
 $ npm run start:prod
+
 ```
 
-## Test
+## Testando a aplicação
 
 ```bash
+
 # unit tests
-$ npm run test
+
+$ npm run test:unit
 
 # e2e tests
+
 $ npm run test:e2e
 
 # test coverage
+
 $ npm run test:cov
+
 ```
 
-## Support
+## Contato
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+- Author - [Crystopher Carvalho](https://github.com/Zackynson)
 
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+## Licença
+  
+Esse projeto não é licenciado
