@@ -219,6 +219,7 @@ $ npm run test:cov
 
 ```
 ---
+<br>
 
 ## Contato
 
@@ -228,7 +229,6 @@ Projeto criado por Crystopher Carvalho
 <br>
 
 Contato: 
-<br>
 
 - [Github](https://github.com/Zackynson)
 - [Linkedin](https://www.linkedin.com/in/crystopher-carvalho/)
