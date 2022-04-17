@@ -158,7 +158,7 @@ $ npm run test:integration
 $ npm run test:cov
 
 ```
-
+---
 
 ## Construindo imagem de produção com Docker
 
