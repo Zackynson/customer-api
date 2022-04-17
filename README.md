@@ -30,6 +30,9 @@ Utilizando:
 - [Docker](https://www.docker.com/) images
 - [Redis](https://redis.io/) in-memory data store
 
+  
+<br>
+
 ---
 
 <br>
@@ -38,8 +41,6 @@ Utilizando:
 
 - Docker
 - NodeJs v14+ (Desenvolvimento local sem Docker)
-
-<br>
 
 ---
 
