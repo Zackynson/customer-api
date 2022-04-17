@@ -223,12 +223,11 @@ $ npm run test:cov
 
 ## Contato
 
-<br>
-Projeto criado por Crystopher Carvalho
+#### Projeto criado por Crystopher Carvalho
 
 <br>
 
-Contato: 
+#### Contato: 
 
 - [Github](https://github.com/Zackynson)
 - [Linkedin](https://www.linkedin.com/in/crystopher-carvalho/)
