@@ -160,9 +160,7 @@ $ npm run test:cov
 ```
 
 
-## Construindo imagem de produção com docker
-
-  
+## Construindo imagem de produção com Docker
 
 #### Gerando a imagem
 
@@ -184,6 +182,25 @@ $ docker run -p <porta_localhost>:4000 <nome_da_imagem_gerada> -e <variaveis_amb
   
 
   
+---
+
+
+## Construindo para produção sem Docker
+
+####Gerando o código de produção
+```bash
+
+$ npm run build 
+
+```
+
+####Rodando no modo de produção
+```bash
+$ npm run start:prod
+
+```
+
+
 ---
 ## Contato
 
