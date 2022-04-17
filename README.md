@@ -38,7 +38,7 @@ Utilizando:
 ## Requisitos
 
 - Docker
-- NodeJs v14+ (Desenvolvimento local sem Docker)
+- Node.js v14+ (Desenvolvimento local sem Docker)
 
 ---
 
