@@ -35,8 +35,6 @@ Utilizando:
 
 ---
 
-<br>
-
 ## Requisitos
 
 - Docker
@@ -47,8 +45,6 @@ Utilizando:
 <br>
 
 ## Desenvolvendo o projeto com Docker
-
-<br> 
 
 #### Clonar o repositório e acessar a pasta
   
@@ -85,8 +81,6 @@ $ docker compose up
 
 ## Construindo imagem para produção
 
-<br> 
-
 #### Gerando a imagem
 
 ```bash
@@ -94,6 +88,7 @@ $ docker compose up
 $ docker build -t <nome_para_imagem>  .
 
 ```
+<br> 
 
 
 #### Rodando container com base na nova imagem
