@@ -225,10 +225,6 @@ $ npm run test:cov
 
 #### Projeto criado por Crystopher Carvalho
 
-<br>
-
-#### Contato: 
-
 - [Github](https://github.com/Zackynson)
 - [Linkedin](https://www.linkedin.com/in/crystopher-carvalho/)
 - [E-Mail](crys.chb@hotmail.com)
