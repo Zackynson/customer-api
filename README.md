@@ -11,13 +11,15 @@
 
 #### Customer API v.1.0.0  
 
+<br> 
+
 Uma uma RESTful API que suporta as seguintes operações:
 
 - Salvar um cliente novo
 - Atualizar um cliente existente
 - Buscar um cliente por ID
 
-  
+<br> 
 
 Utilizando:
 
@@ -29,18 +31,28 @@ Utilizando:
 - [Redis](https://redis.io/) in-memory data store
 
   
-----
+<br>
+
+---
+
+<br>
 
 ## Requisitos
 
 - Docker
 - NodeJs v14+ (Desenvolvimento local sem Docker)
-----
+
+<br>
+
+---
+
+<br>
 
 ## Desenvolvendo o projeto com Docker
 
-#### Clonar o repositório e acessar a pasta
+<br> 
 
+#### Clonar o repositório e acessar a pasta
   
 
 ```bash
@@ -51,7 +63,7 @@ $ cd customer-api
 
 ```
 
-  
+<br> 
 
 #### Inicializar o projeto em modo de desenvolvimento
 
@@ -61,7 +73,7 @@ $ docker compose up
 
 ```
 
-  
+<br> 
 
 #### Serão iniciados dois containers:
 
@@ -69,98 +81,13 @@ $ docker compose up
 
 - A aplicação em si, baseada no arquivo `Dockerfile` na raiz do projeto rodando no endereço [http://localhost:4000](http://localhost:4000)
 
-  
-
 - Banco de dados Redis um container baseado na [Imagem oficial do Redis](https://hub.docker.com/_/redis) rodando na porta 6379
 
-  
-----
+<br> 
 
-## Desenvolvendo sem Docker
+## Construindo imagem para produção
 
-**Importante**: é necessário ter um servidor Redis rodando local ou remotamente nesse caso e configurar as variáveis de ambiente caso nao estejam no endereço padrão de localhost
-
-#### Variaveis de ambiente (Opcional)
-- **REDIS_HOST**: Endereço do redis (default: localhost)
-- **REDIS_PORT**: Porta do redis (default: 6379)
-- **REDIS_PASSWORD**: Senha do redis (Opcional)
-
-  
-
-#### Clonar o repositório e acessar a pasta
-
-```bash
-
-$ git clone https://github.com/Zackynson/customer-api.git
-
-$ cd customer-api  
-
-```
-
-#### Instalar as dependências
-
-  
-
-```bash
-
-$ npm i -g @nestjs/cli
-
-$ npm install
-
-```
-
-#### Rodar a aplicação em modo de desenvolvimento
-
-```bash
-  
-$ npm run start:dev
-
-```
-
-  
-
-A aplicação será iniciada e rodará no endereço [http://localhost:4000](http://localhost:4000)
-
-  
-
-
-
-  
----
-## Testando a aplicação
-
-  
-
-#### Testes unitários
-
-  
-
-```bash
-
-$ npm run test:unit
-
-```
-
-  
-
-##### Testes de integração
-
-```bash
-
-$ npm run test:integration
-
-```
-
-#### Gerar relatório da cobertura de testes
-
-```bash
-
-$ npm run test:cov
-
-```
----
-
-## Construindo imagem de produção com Docker
+<br> 
 
 #### Gerando a imagem
 
@@ -178,14 +105,69 @@ $ docker build -t <nome_para_imagem>  .
 $ docker run -p <porta_localhost>:4000 <nome_da_imagem_gerada> -e <variaveis_ambiente>
 
 ```
-
   
+<br>
 
-  
 ---
 
+<br>
 
-## Construindo para produção sem Docker
+## Desenvolvendo sem Docker
+
+<br> 
+
+**Importante**: é necessário ter um servidor Redis rodando local ou remotamente nesse caso e configurar as variáveis de ambiente caso nao estejam no endereço padrão de localhost
+
+<br> 
+
+### Variaveis de ambiente (Opcional)
+- **REDIS_HOST**: Endereço do redis (default: localhost)
+- **REDIS_PORT**: Porta do redis (default: 6379)
+- **REDIS_PASSWORD**: Senha do redis (Opcional)
+
+<br> 
+
+### Clonar o repositório e acessar a pasta
+
+```bash
+
+$ git clone https://github.com/Zackynson/customer-api.git
+
+$ cd customer-api  
+
+```
+<br> 
+
+### Instalar as dependências
+
+  
+
+```bash
+
+$ npm i -g @nestjs/cli
+
+$ npm install
+
+```
+<br> 
+
+### Rodar a aplicação em modo de desenvolvimento
+
+```bash
+  
+$ npm run start:dev
+
+```
+
+  
+
+A aplicação será iniciada e rodará no endereço [http://localhost:4000](http://localhost:4000)
+
+<br> 
+  
+## Construindo para produção
+
+<br> 
 
 #### Gerando o código de produção
 ```bash
@@ -193,23 +175,70 @@ $ docker run -p <porta_localhost>:4000 <nome_da_imagem_gerada> -e <variaveis_amb
 $ npm run build 
 
 ```
+<br> 
 
 #### Rodando no modo de produção
 ```bash
+
 $ npm run start:prod
 
 ```
 
+  
+<br>
 
 ---
+
+<br>
+
+## Testando a aplicação
+
+<br> 
+  
+#### Testes unitários
+
+  
+
+```bash
+
+$ npm run test:unit
+
+```
+
+<br> 
+
+##### Testes de integração
+
+```bash
+
+$ npm run test:integration
+
+```
+
+<br> 
+
+
+#### Gerar relatório da cobertura de testes
+
+```bash
+
+$ npm run test:cov
+
+```
+---
+
 ## Contato
 
-  
+<br>
+Projeto criado por Crystopher Carvalho
 
-- Author - [Crystopher Carvalho](https://github.com/Zackynson)
+<br>
 
-  
+Contato: 
+<br>
+
+- [Github](https://github.com/Zackynson)
+- [Linkedin](https://www.linkedin.com/in/crystopher-carvalho/)
+- [E-Mail](crys.chb@hotmail.com)
+
 ---
-## Licença
-
-Esse projeto não é licenciado
