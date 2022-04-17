@@ -11,7 +11,7 @@ const config: Config.InitialOptions = {
     '<rootDir>/src/**/*.ts',
     '!<rootDir>/src/layers/main/config/**',
     '!<rootDir>/src/layers/**/*/index.ts',
-    '!<rootDir>/src/app.module.ts',
+    '!<rootDir>/src/app/app.module.ts',
     '!<rootDir>/src/main.ts',
   ],
 
