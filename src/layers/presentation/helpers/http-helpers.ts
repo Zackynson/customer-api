@@ -19,12 +19,12 @@ export const created = (data: any): HttpResponse => ({
 
 export const badRequest = (error: Error): HttpResponse => ({
   statusCode: 400,
-  body: error?.message,
+  body: error.message,
 });
 
 export const unauthorized = (): HttpResponse => ({
   statusCode: 401,
-  body: new UnauthorizedError()?.message,
+  body: new UnauthorizedError().message,
 });
 
 // export const forbidden = (error: Error): HttpResponse => ({
@@ -34,15 +34,15 @@ export const unauthorized = (): HttpResponse => ({
 
 export const notFound = (error?: Error): HttpResponse => ({
   statusCode: 404,
-  body: error?.message || 'Not found.',
+  body: error.message || 'Not found.',
 });
 
 export const serverError = (error?: Error): HttpResponse => ({
   statusCode: 500,
-  body: error?.message || 'Internal server error.',
+  body: error.message || 'Internal server error.',
 });
 
 export const notAvailable = (error?: Error): HttpResponse => ({
   statusCode: 502,
-  body: error?.message || 'Service not available.',
+  body: error.message || 'Service not available.',
 });
