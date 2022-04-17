@@ -30,9 +30,6 @@ Utilizando:
 - [Docker](https://www.docker.com/) images
 - [Redis](https://redis.io/) in-memory data store
 
-  
-<br>
-
 ---
 
 <br>
