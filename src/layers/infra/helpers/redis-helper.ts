@@ -4,6 +4,12 @@ export class RedisHelper {
   static redisClient: Redis;
 
   static async getClient(): Promise<Redis> {
+    if (process.env.JEST_WORKER_ID) {
+      const RedisMock = require('ioredis-mock')
+      this.redisClient = new RedisMock()
+      return this.redisClient
+    }
+
     if (!this.redisClient) {
       this.redisClient = new Redis({
         host: process.env.REDIS_HOST,

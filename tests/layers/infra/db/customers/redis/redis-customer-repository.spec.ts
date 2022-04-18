@@ -2,8 +2,6 @@ import Redis from 'ioredis';
 
 import { RedisCustomerRepository } from '@/infra/db/customers/redis-customer-repository';
 import { RedisHelper } from '@/infra/helpers/redis-helper';
-import { RedisTestContainer } from '@/tests/layers/infra/mocks/create-redis-container';
-import { StartedTestContainer } from 'testcontainers';
 
 jest.setTimeout(100000);
 
@@ -15,18 +13,9 @@ const makeFakeCustomer = () => ({
 
 describe('RedisCustomerRepository', () => {
   let redisClient: Redis;
-  let container: StartedTestContainer;
-
-  beforeAll(async () => {
-    container = await RedisTestContainer.getContainer();
-
-    process.env.REDIS_HOST = container.getHost();
-    process.env.REDIS_PORT = container.getMappedPort(6379).toString();
-  });
 
   afterAll(async () => {
     redisClient && (await redisClient.quit());
-    container && (await container.stop());
   });
 
   beforeEach(async () => {
