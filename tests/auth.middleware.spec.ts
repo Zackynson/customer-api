@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import * as httpMocks from 'node-mocks-http';
 
-import { AuthMiddleware } from '@/src/common/middlewares/auth.middleware';
+import { AuthMiddleware } from '@/src/app/common/middlewares/auth.middleware';
 
 jest.setTimeout(100000);
 
