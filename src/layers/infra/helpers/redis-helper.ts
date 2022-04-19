@@ -1,11 +1,11 @@
-import Redis from 'ioredis';
+import Redis, {Redis as RedisClient} from 'ioredis';
+const RedisMock = require('ioredis-mock')
 
 export class RedisHelper {
-  static redisClient: Redis;
+  static redisClient: RedisClient;
 
-  static async getClient(): Promise<Redis> {
+  static async getClient(): Promise<RedisClient> {
     if (process.env.JEST_WORKER_ID) {
-      const RedisMock = require('ioredis-mock')
       this.redisClient = new RedisMock()
       return this.redisClient
     }

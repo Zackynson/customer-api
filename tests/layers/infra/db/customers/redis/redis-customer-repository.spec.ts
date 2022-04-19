@@ -1,4 +1,4 @@
-import Redis from 'ioredis';
+import {Redis} from 'ioredis';
 
 import { RedisCustomerRepository } from '@/infra/db/customers/redis-customer-repository';
 import { RedisHelper } from '@/infra/helpers/redis-helper';
