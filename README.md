@@ -109,11 +109,13 @@ $ docker run -p <porta_localhost>:4000 <nome_da_imagem_gerada> -e <variaveis_amb
 
 <br> 
 
-**Importante**: é necessário ter um servidor Redis rodando local ou remotamente nesse caso e configurar as variáveis de ambiente caso nao estejam no endereço padrão de localhost
+**Importante**: é necessário ter um servidor Redis rodando local ou remotamente nesse caso e configurar as variáveis de ambiente
 
 <br> 
 
-### Variaveis de ambiente (Opcional)
+### Variaveis de ambiente
+- **SSO_CLIENT_SECRET**: Secret do cliente no servico de SSO
+- **SSO_CLIENT_ID**: Id do cliente no servico de SSO  
 - **REDIS_HOST**: Endereço do redis (default: localhost)
 - **REDIS_PORT**: Porta do redis (default: 6379)
 - **REDIS_PASSWORD**: Senha do redis (Opcional)
