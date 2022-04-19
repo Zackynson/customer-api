@@ -9,18 +9,18 @@ services:
       dockerfile: Dockerfile
       target: customer-api
     environment:
-      - PORT=4000
+      - PORT=3000
       - REDIS_HOST=customer-api-redis
       - REDIS_PORT=6379
       - REDIS_PASSWORD=senhasupersecreta
       - SSO_CLIENT_SECRET=453000f7-47a0-4489-bc47-891c742650e2
       - SSO_CLIENT_ID=customers
     expose:
-      - '4000'
+      - '3000'
     links:
       - customer-api-redis
     ports:
-      - '4000:4000'
+      - '3000:3000'
     volumes:
       - ./src:/usr/src/app/src
       - ./tests:/usr/src/app/tests
