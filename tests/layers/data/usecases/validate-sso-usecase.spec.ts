@@ -9,6 +9,10 @@ describe('ValidateSSOUseCase', () => {
   beforeEach(() => {
     ssoService = new SSOServiceSpy();
     sut = new ValidateSSOUseCase({
+      additionalFormData: {
+        client_id: 'any_id',
+        client_secret: 'any_secret',
+      },
       ssoService,
     });
   });
@@ -57,8 +61,8 @@ describe('ValidateSSOUseCase', () => {
     await sut.validate('Bearer any_token');
 
     expect(introspectSpy).toBeCalledWith({
-      client_id: 'customers',
-      client_secret: '453000f7-47a0-4489-bc47-891c742650e2',
+      client_id: 'any_id',
+      client_secret: 'any_secret',
       token: 'any_token',
     });
   });

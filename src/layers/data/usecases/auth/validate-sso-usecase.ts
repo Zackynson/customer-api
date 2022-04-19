@@ -4,6 +4,7 @@ import { SSOService } from '@/data/protocols/sso-service';
 
 export class ValidateSSOUseCase implements Validation {
   private readonly ssoService: SSOService;
+  private readonly additionalFormData: { [key: string]: string };
 
   constructor(params: ValidateSSO.Params) {
     Object.assign(this, params);
@@ -20,8 +21,7 @@ export class ValidateSSOUseCase implements Validation {
 
         const formData = {
           token: value,
-          client_id: 'customers',
-          client_secret: '453000f7-47a0-4489-bc47-891c742650e2',
+          ...this.additionalFormData,
         };
 
         const tokenData = await this.ssoService.introspect(formData);
@@ -41,5 +41,6 @@ export class ValidateSSOUseCase implements Validation {
 export namespace ValidateSSO {
   export type Params = {
     ssoService: SSOService;
+    additionalFormData?: { [key: string]: string };
   };
 }
