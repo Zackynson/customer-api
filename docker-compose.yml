@@ -13,6 +13,8 @@ services:
       - REDIS_HOST=customer-api-redis
       - REDIS_PORT=6379
       - REDIS_PASSWORD=senhasupersecreta
+      - SSO_CLIENT_SECRET=453000f7-47a0-4489-bc47-891c742650e2
+      - SSO_CLIENT_ID=customers
     expose:
       - '4000'
     links:
@@ -21,6 +23,7 @@ services:
       - '4000:4000'
     volumes:
       - ./src:/usr/src/app/src
+      - ./tests:/usr/src/app/tests
     depends_on:
       - customer-api-redis
     command: npm run start:dev
