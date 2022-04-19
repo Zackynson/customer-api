@@ -5,7 +5,7 @@ import { AuthMiddleware } from '@/src/app/common/middlewares/auth.middleware';
 
 jest.setTimeout(100000);
 
-describe('AppController', () => {
+describe('AuthMiddleware', () => {
   let authMiddleware: AuthMiddleware;
 
   beforeEach(async () => {
