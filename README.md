@@ -73,7 +73,7 @@ $ docker compose up
 
   
 
-- A aplicação em si, baseada no arquivo `Dockerfile` na raiz do projeto rodando no endereço [http://localhost:4000](http://localhost:4000)
+- A aplicação em si, baseada no arquivo `Dockerfile` na raiz do projeto rodando no endereço [http://localhost:3000](http://localhost:3000)
 
 - Banco de dados Redis um container baseado na [Imagem oficial do Redis](https://hub.docker.com/_/redis) rodando na porta 6379
 
@@ -95,7 +95,7 @@ $ docker build -t <nome_para_imagem>  .
 
 ```bash
 
-$ docker run -p <porta_localhost>:4000 <nome_da_imagem_gerada> -e <variaveis_ambiente>
+$ docker run -p <porta_localhost>:3000 <nome_da_imagem_gerada> -e <variaveis_ambiente>
 
 ```
   
@@ -156,7 +156,7 @@ $ npm run start:dev
 
   
 
-A aplicação será iniciada e rodará no endereço [http://localhost:4000](http://localhost:4000)
+A aplicação será iniciada e rodará no endereço [http://localhost:3000](http://localhost:3000)
 
 <br> 
   
