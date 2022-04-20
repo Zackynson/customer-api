@@ -10,9 +10,15 @@ import {
   CustomerRegisterController,
   CustomerUpdateController,
 } from '@/presentation/controllers';
+import { ApiBearerAuth, ApiBody, ApiTags } from '@nestjs/swagger';
 
+import { CustomerRegisterDTO, CustomerUpdateDTO } from '@/src/app/common/docs';
+
+@ApiTags('CUSTOMERS')
 @Controller('customers')
 export class AppController {
+  @ApiBearerAuth()
+  @ApiBody({ type: CustomerRegisterDTO })
   @Post()
   async create(
     @Body() body: CustomerRegisterController.CustomerRegisterDTO,
@@ -25,6 +31,7 @@ export class AppController {
     return res.status(response.statusCode).json(response);
   }
 
+  @ApiBearerAuth()
   @Get(':id')
   async findById(@Param('id') id: string, @Res() res: Response) {
     const response = await makeCustomerFindByIdController().handle({
@@ -36,6 +43,8 @@ export class AppController {
     return res.status(response.statusCode).json(response);
   }
 
+  @ApiBearerAuth()
+  @ApiBody({ type: CustomerUpdateDTO })
   @Put(':id')
   async updateOne(
     @Param('id') id: string,

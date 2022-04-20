@@ -37,10 +37,11 @@ export class CustomerUpdateController implements Controller {
 }
 
 export namespace CustomerUpdateController {
-  export type CustomerUpdateDTO = {
+  export class CustomerUpdateDTO {
     document: number;
     name: string;
-  };
+  }
+
   export type ConstructorParams = {
     validation: Validation;
     customerFindByIdUseCase: CustomerFindById;

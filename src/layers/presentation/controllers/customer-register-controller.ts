@@ -24,10 +24,11 @@ export class CustomerRegisterController implements Controller {
 }
 
 export namespace CustomerRegisterController {
-  export type CustomerRegisterDTO = {
+  export class CustomerRegisterDTO {
     document: number;
     name: string;
-  };
+  }
+
   export type ConstructorParams = {
     validation: Validation;
     customerRegisterUseCase: CustomerRegister;
