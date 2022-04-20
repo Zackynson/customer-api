@@ -73,7 +73,7 @@ $ docker compose up
 
   
 
-- A aplicação em si, baseada no arquivo `Dockerfile` na raiz do projeto rodando no endereço [http://localhost:3000](http://localhost:3000)
+- A aplicação em si, baseada no arquivo `Dockerfile` na raiz do projeto rodando no endereço [http://localhost:3000](http://localhost:3000) 
 
 - Banco de dados Redis um container baseado na [Imagem oficial do Redis](https://hub.docker.com/_/redis) rodando na porta 6379
 
@@ -149,9 +149,7 @@ $ npm install
 ### Rodar a aplicação em modo de desenvolvimento
 
 ```bash
-  
 $ npm run start:dev
-
 ```
 
   
@@ -222,6 +220,15 @@ $ npm run test:cov
 ```
 ---
 <br>
+
+
+## Documentação da API
+
+#### Ao rodar a aplicação independentemente do ambiente (local/docker) a documentação das rotas fica disponivel no endpoint `/docs`, contendo exemplos de requisições para facilitar a integração com a api.
+
+<br>
+
+---
 
 ## Contato
 
