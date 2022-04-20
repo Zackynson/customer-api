@@ -227,7 +227,7 @@ $ npm run test:cov
 
 ## Documentação da API
 
-#### Ao rodar a aplicação independentemente do ambiente (local/docker) a documentação das rotas fica disponivel no endpoint `/docs`, contendo exemplos de requisições para facilitar a integração com a api.
+Ao rodar a aplicação independentemente do ambiente (local/docker) a documentação das rotas fica disponivel no endpoint `/docs`, contendo exemplos de requisições para facilitar a integração com a api.
 
 <br>
 
