@@ -190,10 +190,10 @@ $ npm run start:prod
 
 <br> 
   
-#### Testes unitários
-
+**Os comandos abaixo podem ser executados tanto no ambiente local quanto dentro do container através de uma shell interativa**
   
-
+#### Testes unitários
+  
 ```bash
 
 $ npm run test:unit
