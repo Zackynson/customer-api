@@ -109,16 +109,19 @@ $ docker run -p <porta_localhost>:3000 <nome_da_imagem_gerada> -e <variaveis_amb
 
 <br> 
 
-**Importante**: é necessário ter um servidor Redis rodando local ou remotamente nesse caso e configurar as variáveis de ambiente
+**Importante**: é necessário ter um servidor Redis rodando local ou remotamente nesse caso e configurar as variáveis de ambiente através do arquivo `.env` na raiz do projeto.
 
 <br> 
 
 ### Variaveis de ambiente
+- **PORT**=Porta da api (default: 3000)
+- **KEYCLOAK_HOST**=Url para realizar o introspect do token no SSO (Opcional, ja configurado no projeto)
 - **SSO_CLIENT_SECRET**: Secret do cliente no servico de SSO
 - **SSO_CLIENT_ID**: Id do cliente no servico de SSO  
 - **REDIS_HOST**: Endereço do redis (default: localhost)
 - **REDIS_PORT**: Porta do redis (default: 6379)
 - **REDIS_PASSWORD**: Senha do redis (Opcional)
+
 
 <br> 
 

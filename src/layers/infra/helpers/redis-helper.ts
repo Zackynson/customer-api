@@ -1,13 +1,15 @@
-import Redis, {Redis as RedisClient} from 'ioredis';
-const RedisMock = require('ioredis-mock')
+import Redis, { Redis as RedisClient } from 'ioredis';
 
 export class RedisHelper {
   static redisClient: RedisClient;
 
   static async getClient(): Promise<RedisClient> {
     if (process.env.JEST_WORKER_ID) {
-      this.redisClient = new RedisMock()
-      return this.redisClient
+      // eslint-disable-next-line @typescript-eslint/no-var-requires
+      const RedisMock = require('ioredis-mock');
+
+      this.redisClient = new RedisMock();
+      return this.redisClient;
     }
 
     if (!this.redisClient) {

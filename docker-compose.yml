@@ -15,6 +15,7 @@ services:
       - REDIS_PASSWORD=senhasupersecreta
       - SSO_CLIENT_SECRET=453000f7-47a0-4489-bc47-891c742650e2
       - SSO_CLIENT_ID=customers
+      - KEYCLOAK_HOST=https://accounts.seguros.vitta.com.br/auth/realms/careers/protocol/openid-connect/token/introspect
     expose:
       - '3000'
     links:

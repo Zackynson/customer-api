@@ -33,6 +33,7 @@ export class ValidateSSOUseCase implements Validation {
 
       return new UnauthorizedError();
     } catch (error) {
+      console.error(error);
       return new SSOUnavailableError();
     }
   }

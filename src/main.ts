@@ -9,6 +9,6 @@ async function bootstrap() {
 
   gerenateApiDocs(app);
 
-  await app.listen(env.port);
+  await app.listen(env().port);
 }
 bootstrap();
