@@ -10,5 +10,7 @@ config.coverageThreshold = {
     statements: 0,
   },
 };
+config.silent = true;
+config.noStackTrace = true;
 
 export default config;

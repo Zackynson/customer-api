@@ -6,7 +6,7 @@ export class KeycloakSSOService implements SSOService {
   private readonly host: string;
   private readonly headers: any;
 
-  constructor(params: KeyCloakAuthenticator.Params) {
+  constructor(params: KeyCloakSsoService.Params) {
     Object.assign(this, params);
   }
 
@@ -23,7 +23,7 @@ export class KeycloakSSOService implements SSOService {
   }
 }
 
-export namespace KeyCloakAuthenticator {
+export namespace KeyCloakSsoService {
   export type Params = {
     host: string;
     headers?: any;
