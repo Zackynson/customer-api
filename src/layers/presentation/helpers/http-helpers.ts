@@ -34,15 +34,10 @@ export const unauthorized = (): HttpResponse => ({
 
 export const notFound = (error?: Error): HttpResponse => ({
   statusCode: 404,
-  body: error.message || 'Not found.',
-});
-
-export const serverError = (error?: Error): HttpResponse => ({
-  statusCode: 500,
-  body: error.message || 'Internal server error.',
+  body: error.message,
 });
 
 export const notAvailable = (error?: Error): HttpResponse => ({
   statusCode: 502,
-  body: error.message || 'Service not available.',
+  body: error.message,
 });

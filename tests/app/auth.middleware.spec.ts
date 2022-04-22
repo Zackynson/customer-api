@@ -7,6 +7,9 @@ jest.setTimeout(100000);
 
 describe('AuthMiddleware', () => {
   let authMiddleware: AuthMiddleware;
+  const req = httpMocks.createRequest();
+  const res = httpMocks.createResponse();
+  const next = jest.fn();
 
   beforeEach(async () => {
     const app: TestingModule = await Test.createTestingModule({
@@ -17,15 +20,9 @@ describe('AuthMiddleware', () => {
     authMiddleware = app.get<AuthMiddleware>(AuthMiddleware);
   });
 
-  describe('[POST] /customers', () => {
-    const req = httpMocks.createRequest();
-    const res = httpMocks.createResponse();
-    const next = jest.fn();
+  it('should return 401', async () => {
+    const response: any = await authMiddleware.use(req, res, next);
 
-    it('should return 401', async () => {
-      const response: any = await authMiddleware.use(req, res, next);
-
-      expect(response.statusCode).toEqual(401);
-    });
+    expect(response.statusCode).toEqual(401);
   });
 });
