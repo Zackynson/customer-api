@@ -191,13 +191,17 @@ $ npm run start:prod
 
 <br> 
   
-**Os comandos abaixo podem ser executados tanto no ambiente local quanto dentro do container através de uma shell interativa**
+**Os comandos abaixo podem ser executados tanto no ambiente local quanto dentro do container através de uma shell interativa ou via docker-compose**
   
 #### Testes unitários
   
 ```bash
 
+#ambiente local ou shell interativa
 $ npm run test:unit
+
+#ou via docker-compose
+$ docker-compose run customer-api npm run test:unit
 
 ```
 
@@ -207,18 +211,38 @@ $ npm run test:unit
 
 ```bash
 
+#ambiente local ou shell interativa
 $ npm run test:integration
+
+#ou via docker-compose
+$ docker-compose run customer-api npm run test:integration
 
 ```
 
 <br> 
 
 
+#### Rodar todos os testes
+
+```bash
+
+#ambiente local ou shell interativa
+$ npm run test
+
+#ou via docker-compose
+$ docker-compose run customer-api npm run test
+
+```
+
 #### Gerar relatório da cobertura de testes
 
 ```bash
 
+#ambiente local ou shell interativa
 $ npm run test:cov
+
+#ou via docker-compose
+$ docker-compose run customer-api npm run test:cov
 
 ```
 ---
